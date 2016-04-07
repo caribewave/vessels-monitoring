@@ -1,13 +1,5 @@
-**                                                                              
-88888888ba                                   88  88b           d88              
-88      "8b                                  88  888b         d888              
-88      ,8P                                  88  88`8b       d8'88              
-88aaaaaa8P'  ,adPPYba,  ,adPPYYba,   ,adPPYb,88  88 `8b     d8' 88   ,adPPYba,  
-88""""88'   a8P_____88  ""     `Y8  a8"    `Y88  88  `8b   d8'  88  a8P_____88  
-88    `8b   8PP"""""""  ,adPPPPP88  8b       88  88   `8b d8'   88  8PP"""""""  
-88     `8b  "8b,   ,aa  88,    ,88  "8a,   ,d88  88    `888'    88  "8b,   ,aa  
-88      `8b  `"Ybbd8"'  `"8bbdP"Y8   `"8bbdP"Y8  88     `8'     88   `"Ybbd8"'  
-**                                                                                
+Readme
+======
                                                                                 
 These files are collected in a beautiful city of Normandy: Vernon.
 
@@ -37,19 +29,11 @@ This file have the same format than the others files. and can be uncompress with
 
 If you want a pure NMEA AIS file without timestamp you can use this GNU/Awk command line:
 
-awk '{print $3}' ais_vernon_DDMMYYYY.log
+`awk '{print $3}' ais_vernon_DDMMYYYY.log`
 
+Decode AIS
+======
 
-**                                                                             
-88888888ba,                                                  88              
-88      `"8b                                                 88              
-88        `8b                                                88              
-88         88   ,adPPYba,   ,adPPYba,   ,adPPYba,    ,adPPYb,88   ,adPPYba,  
-88         88  a8P_____88  a8"     ""  a8"     "8a  a8"    `Y88  a8P_____88  
-88         8P  8PP"""""""  8b          8b       d8  8b       88  8PP"""""""  
-88      .a8P   "8b,   ,aa  "8a,   ,aa  "8a,   ,a8"  "8a,   ,d88  "8b,   ,aa  
-88888888Y"'     `"Ybbd8"'   `"Ybbd8"'   `"YbbdP"'    `"8bbdP"Y8   `"Ybbd8"'  
-**                                                                             
 The GPSD Project has documented the AIS protocol on this page
 http://catb.org/gpsd/AIVDM.html
 
@@ -58,7 +42,7 @@ Don't hesitate to help the project on Gratipay https://gratipay.com/~esr/
 
 Fast explanation about what the fields mean::
 
-!AIVDM,1,1,,B,177KQJ5000G?tO`K>RA1wUbN0TKH,0*5C
+`!AIVDM,1,1,,B,177KQJ5000G?tO`K>RA1wUbN0TKH,0*5C`
 
 Field 1, !AIVDM, identifies this as an AIVDM packet.
 
@@ -77,8 +61,8 @@ The *-separated suffix (*5C) is the NMEA 0183 data-integrity checksum for the se
 
 For comparison, here is an example of a multifragment sentence with a nonempty message ID field:
 
-!AIVDM,2,1,3,B,55P5TL01VIaAL@7WKO@mBplU@<PDhh000000001S;AJ::4A80?4i@E53,0*3E
-!AIVDM,2,2,3,B,1@0000000000000,2*55
+`!AIVDM,2,1,3,B,55P5TL01VIaAL@7WKO@mBplU@<PDhh000000001S;AJ::4A80?4i@E53,0*3E`
+`!AIVDM,2,2,3,B,1@0000000000000,2*55`
 
 Technically, NMEA0183 does not actually require that a !-led sentence be AIS. This format can be used for any encapsulated data. The syntax and semantics of fields 1-4 are fixed, and the fill-bit field and NEA checksum are required, but the payload fields may contain any encapsulated data.
 It is, however, a safe bet that any such sentence containing an A or B channel code in field 5 is AIVDM/AIVDO.
@@ -92,14 +76,14 @@ https://pypi.python.org/pypi/libais
 Two examples in Python language
 
 One line message:
-2016-04-01 00:09:59, !AIVDM,1,1,,A,240UuRhP1RP716JL4:sLlOwnb6hT,0*3C
+`2016-04-01 00:09:59, !AIVDM,1,1,,A,240UuRhP1RP716JL4:sLlOwnb6hT,0*3C`
 
 <Extract Only the data payload> 
 
-import ais
-ais.decode('240UuRhP1RP716JL4:sLlOwnb6hT',0)
+`import ais`
+`ais.decode('240UuRhP1RP716JL4:sLlOwnb6hT',0)`
 
-{
+`{
 u'slot_timeout': 1L,
 u'sync_state': 0L,
 u'true_heading': 511L,
@@ -121,19 +105,19 @@ u'utc_hour': 22L,
 u'rot_over_range': True,
 u'mmsi': 269057419L,
 u'special_manoeuvre': 1L
-}
+}`
 
 Two lines message:
-016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61
-2016-04-01 10:46:06, !AIVDM,2,2,4,A,88888888880,2*20
+`016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61
+2016-04-01 10:46:06, !AIVDM,2,2,4,A,88888888880,2*20`
 
 
 TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0 args at the end by 2
 
-import ais
-ais.decode('540UuRl00000PF3OC7UHTdTpN18Tp@622222220t4iQ7651<04TSmAC`888888888888880',2)
+`import ais
+ais.decode('540UuRl00000PF3OC7UHTdTpN18Tp@622222220t4iQ7651<04TSmAC`888888888888880',2)`
 
-{
+`{
 u'destination': u'ROUEN               ',
 u'dim_d': 6L,
 u'name': u'VIKING RINDA        ',
@@ -155,20 +139,10 @@ u'type_and_cargo': 60L,
 u'fix_type': 1L,
 u'id': 5L,
 u'imo_num': 0L
-}
+}`
 
-
-
-
-88           88                                                               
-88           ""                                                               
-88                                                                            
-88           88   ,adPPYba,   ,adPPYba,  8b,dPPYba,    ,adPPYba,   ,adPPYba,  
-88           88  a8"     ""  a8P_____88  88P'   `"8a  a8"     ""  a8P_____88  
-88           88  8b          8PP"""""""  88       88  8b          8PP"""""""  
-88           88  "8a,   ,aa  "8b,   ,aa  88       88  "8a,   ,aa  "8b,   ,aa  
-88888888888  88   `"Ybbd8"'   `"Ybbd8"'  88       88   `"Ybbd8"'   `"Ybbd8"'  
-                                                                              
+Licence
+======                                                                              
                                                                               
 The data are published under the licence Creative Commons 4 By
 http://creativecommons.org/licenses/by/4.0/
@@ -195,17 +169,8 @@ Notices:
     For example, other rights such as publicity, privacy, or moral rights may limit how you use the material
 
 
+ASCII Art
+=========
 
-                                                                                               
-       db         ad88888ba     ,ad8888ba,   88  88            db                              
-      d88b       d8"     "8b   d8"'    `"8b  88  88           d88b                      ,d     
-     d8'`8b      Y8,          d8'            88  88          d8'`8b                     88     
-    d8'  `8b     `Y8aaaaa,    88             88  88         d8'  `8b      8b,dPPYba,  MM88MMM  
-   d8YaaaaY8b      `"""""8b,  88             88  88        d8YaaaaY8b     88P'   "Y8    88     
-  d8""""""""8b           `8b  Y8,            88  88       d8""""""""8b    88            88     
- d8'        `8b  Y8a     a8P   Y8a.    .a8P  88  88      d8'        `8b   88            88,    
-d8'          `8b  "Y88888P"     `"Y8888Y"'   88  88     d8'          `8b  88            "Y888  
-                                                                                               
-                                                                                               
 ASCII Art generated online by:
 http://www.patorjk.com/software/taag/#p=display&f=Univers&t=ASCII%20Art
