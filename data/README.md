@@ -18,18 +18,18 @@ You can look at the [station dashboard's](http://www.marinetraffic.com/en/ais/de
 
 This work is part of the [CaribeWaveFWI Project](https://github.com/caribewave "CaribeWaveFWI")
 
-Each file **ais_vernon_YYYYMMDD.log** contains the raw AIS data of the day in local time of Paris
+Each file **ais_vernon_yyyymmdd.log** contains the raw AIS data of the day in local time of Paris
 
 `YYYY-MM-DD HH:MM:SS, o---------------AIS SENTENCE -----------------o`
 
 `2016-03-28 22:12:12, !AIVDM,1,1,,A,23GR0u0P0006kshL5qQ00?vH0@7:,0*44`
                                                                               
-The file named **log_ais_1243_vernon.log.xz** contains compressed version of all the data collected by the station since 2016-03-28 22:12:12.
+The file named **log_ais_1243_vernon.log.xz** contains compressed version of all the data collected by the station since _2016-03-28 22:12:12_
 This file have the same format than the others files. and can be uncompress with unxz utilities.
 
 If you want a pure NMEA AIS file without timestamp you can use this GNU/Awk command line:
 
-`awk '{print $3}' ais_vernon_YYYYMMDD.log`
+`awk '{print $3}' ais_vernon_yyyymmdd.log`
 
 Decode AIS
 ==========
@@ -39,7 +39,7 @@ The [GPSD Project](http://catb.org/gpsd/AIVDM.html) has documented the AIS proto
 Small extract of this great decoding manual from Eric S. Raymond [@esrtweet](https://twitter.com/esrtweet "Twitter")
 Don't hesitate to help the project on [Gratipay](https://gratipay.com/~esr/)
 
-###Fast explanation about what the fields mean::
+**Fast explanation about what the fields mean:**
 
 `!AIVDM,1,1,,B,177KQJ5000G?tO``K>RA1wUbN0TKH,0*5C`
 
@@ -68,7 +68,7 @@ Technically, NMEA0183 does not actually require that a !-led sentence be AIS. Th
 It is, however, a safe bet that any such sentence containing an A or B channel code in field 5 is AIVDM/AIVDO.
                                                                                                                
 
-###You can decode AIS NMEA message with many tools:
+**You can decode AIS NMEA message with many tools:**
 
 libais is a good start in Python theris reference to other tools on the project page
 https://pypi.python.org/pypi/libais
@@ -76,7 +76,7 @@ https://pypi.python.org/pypi/libais
 Two examples in Python language
 -------------------------------
 
-###One line message:
+**One line message:**
 
 `2016-04-01 00:09:59, !AIVDM,1,1,,A,240UuRhP1RP716JL4:sLlOwnb6hT,0*3C`
 
@@ -110,14 +110,14 @@ Extract Only the data payload
 	u'special_manoeuvre': 1L
 	}
 
-###Two lines message:
+**Two lines message:**
 
 `2016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61`
 
 `2016-04-01 10:46:06, !AIVDM,2,2,4,A,88888888880,2*20`
 
 
-###TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0 args at the end by 2
+_TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0 args at the end by 2_
 
 `import ais`
 
