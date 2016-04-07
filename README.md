@@ -1,7 +1,10 @@
 Readme
 ======
                                                                                 
-These files are collected in a beautiful city of Normandy: Vernon.
+The **/data** folder contains raw AIS files collected in a beautiful city of Normandy: Vernon.
+Fortunatly Vernon is crossed by the Seine. so we can test AIS signals with AIS receiver like [dAISy](http://forum.43oh.com/topic/4833-potm-daisy-a-simple-ais-receiver/)
+
+**Ships data are critical in case of tsunami because some of them are carrying people or hazardous materials.**
 
 We've deployed an AIS station based on:
 
