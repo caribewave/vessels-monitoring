@@ -29,6 +29,7 @@ Each file **ais_vernon_yyyymmdd.log** contains the raw AIS data of the day in lo
 `2016-03-28 22:12:12, !AIVDM,1,1,,A,23GR0u0P0006kshL5qQ00?vH0@7:,0*44`
                                                                               
 The file named **log_ais_1243_vernon.log.xz** contains compressed version of all the data collected by the station since _2016-03-28 22:12:12_
+
 This file have the same format than the others files. and can be uncompress with unxz utilities.
 
 If you want a pure NMEA AIS file without timestamp you can use this GNU/Awk command line:
