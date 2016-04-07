@@ -13,11 +13,10 @@ We've deployed an AIS station based on:
 * libais
 * gpsd
 
-You can look at the station dashboard's via Marine Traffic
-http://www.marinetraffic.com/en/ais/details/stations/1243 
+You can look at the [station dashboard's](http://www.marinetraffic.com/en/ais/details/stations/1243 "Marine Traffic") via Marine Traffic
 
-This work is part of the CaribeWaveFWI Project
-https://github.com/caribewave
+
+This work is part of the [CaribeWaveFWI Project](https://github.com/caribewave "CaribeWaveFWI")
 
 Each file ais_vernon_DDMMYYYY.log contains the raw AIS data of the day in local time of Paris
 
@@ -35,11 +34,11 @@ If you want a pure NMEA AIS file without timestamp you can use this GNU/Awk comm
 Decode AIS
 ==========
 
-The GPSD Project has documented the AIS protocol on this page
-http://catb.org/gpsd/AIVDM.html
+The [GPSD Project](http://catb.org/gpsd/AIVDM.html) has documented the AIS protocol on this page
 
-Small extract of this great decoding manual from Eric S. Raymond @esrtweet
-Don't hesitate to help the project on Gratipay https://gratipay.com/~esr/
+
+Small extract of this great decoding manual from Eric S. Raymond _@esrtweet_
+Don't hesitate to help the project on [Gratipay](https://gratipay.com/~esr/)
 
 Fast explanation about what the fields mean::
 
@@ -151,7 +150,7 @@ TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0
 Licence
 =======               
                                                                        
-The data are published under the licence Creative Commons 4 By
+** The data are published under the licence Creative Commons 4 By **
 http://creativecommons.org/licenses/by/4.0/
 
 You are free to:
