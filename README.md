@@ -75,10 +75,10 @@ It is, however, a safe bet that any such sentence containing an A or B channel c
 
 **You can decode AIS NMEA message with many tools:**
 
-libais is a good start in Python theris reference to other tools on the project page
-https://pypi.python.org/pypi/libais
+[**libais**](https://pypi.python.org/pypi/libais) is a good start in Python there are references to other tools on the project page.
 
-###Two examples in Python language
+
+**Two examples in Python**
 
 **One line message:**
 
@@ -121,7 +121,7 @@ Extract Only the data payload
 `2016-04-01 10:46:06, !AIVDM,2,2,4,A,88888888880,2*20`
 
 
-_TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0 args at the end by 2_
+_TODO: Concatenate the two data payload below and don't forget to replace the 0 args at the end by 2_
 
 `import ais`
 
