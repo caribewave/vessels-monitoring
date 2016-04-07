@@ -37,7 +37,7 @@ Decode AIS
 The [GPSD Project](http://catb.org/gpsd/AIVDM.html) has documented the AIS protocol on this page
 
 
-Small extract of this great decoding manual from Eric S. Raymond _@esrtweet_
+Small extract of this great decoding manual from Eric S. Raymond _@esrtweet_  
 Don't hesitate to help the project on [Gratipay](https://gratipay.com/~esr/)
 
 Fast explanation about what the fields mean::
