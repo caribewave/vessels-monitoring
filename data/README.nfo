@@ -61,11 +61,17 @@ Fast explanation about what the fields mean::
 !AIVDM,1,1,,B,177KQJ5000G?tO`K>RA1wUbN0TKH,0*5C
 
 Field 1, !AIVDM, identifies this as an AIVDM packet.
+
 Field 2 (1 in this example) is the count of fragments in the currently accumulating message. The payload size of each sentence is limited by NMEA 0183’s 82-character maximum, so it is sometimes required to split a payload over several fragment sentences.
+
 Field 3 (1 in this example) is the fragment number of this sentence. It will be one-based. A sentence with a fragment count of 1 and a fragment number of 1 is complete in itself.
+
 Field 4 (empty in this example) is a sequential message ID for multi-sentence messages.
+
 Field 5 (B in this example) is a radio channel code. AIS uses the high side of the duplex from two VHF radio channels: AIS Channel A is 161.975Mhz (87B); AIS Channel B is 162.025Mhz (88B). In the wild, channel codes 1 and 2 may also be encountered; the standards do not prescribe an interpretation of these but it’s obvious enough..
+
 Field 6 (177KQJ5000G?tO`K>RA1wUbN0TKH in this example) is the data payload. We’ll describe how to decode this in later sections.
+
 Field 7 (0) is the number of fill bits requires to pad the data payload to a 6 bit boundary, ranging from 0 to 5. Equivalently, subtracting 5 from this tells how many least significant bits of the last 6-bit nibble in the data payload should be ignored. Note that this pad byte has a tricky interaction with the <[ITU-1371]> requirement for byte alignment in over-the-air AIS messages; see the detailed discussion of message lengths and alignment in a later section.
 The *-separated suffix (*5C) is the NMEA 0183 data-integrity checksum for the sentence, preceded by "*". It is computed on the entire sentence including the AIVDM tag but excluding the leading "!".
 
