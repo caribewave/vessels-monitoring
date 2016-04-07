@@ -37,7 +37,7 @@ Decode AIS
 The [GPSD Project](http://catb.org/gpsd/AIVDM.html) has documented the AIS protocol on this page
 
 
-Small extract of this great decoding manual from Eric S. Raymond _@esrtweet_  
+Small extract of this great decoding manual from Eric S. Raymond [@esrtweet](https://twitter.com/esrtweet "Twitter")
 Don't hesitate to help the project on [Gratipay](https://gratipay.com/~esr/)
 
 Fast explanation about what the fields mean::
@@ -150,8 +150,7 @@ TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0
 Licence
 =======               
                                                                        
-** The data are published under the licence Creative Commons 4 By **
-http://creativecommons.org/licenses/by/4.0/
+** The data are published under the licence [Creative Commons 4 By](http://creativecommons.org/licenses/by/4.0/) **
 
 You are free to:
 
