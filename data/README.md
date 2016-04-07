@@ -122,7 +122,7 @@ TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0
 
 `import ais`
 
-`ais.decode('540UuRl00000PF3OC7UHTdTpN18Tp@622222220t4iQ7651<04TSmAC``888888888888880',2)`
+`ais.decode('540UuRl00000PF3OC7UHTdTpN18Tp@622222220t4iQ7651<04TSmAC```888888888888880',2)`
 
 	{
 	u'destination': u'ROUEN               ',
