@@ -73,8 +73,7 @@ It is, however, a safe bet that any such sentence containing an A or B channel c
 libais is a good start in Python theris reference to other tools on the project page
 https://pypi.python.org/pypi/libais
 
-Two examples in Python language
--------------------------------
+###Two examples in Python language
 
 **One line message:**
 
@@ -151,8 +150,7 @@ Licence
 =======               
                                                                        
 
-The data are published under the licence [Creative Commons 4 By](http://creativecommons.org/licenses/by/4.0/)
--------------------------------------------------------------------------------------------------------------
+**The data are published under the licence [Creative Commons 4 By](http://creativecommons.org/licenses/by/4.0/)**
 
 ###You are free to:
 
