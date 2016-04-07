@@ -22,6 +22,7 @@ https://github.com/caribewave
 Each file ais_vernon_DDMMYYYY.log contains the raw AIS data of the day in local time of Paris
 
 `YYYY-MM-DD HH:MM:SS, o---------------AIS SENTENCE -----------------o`
+
 `2016-03-28 22:12:12, !AIVDM,1,1,,A,23GR0u0P0006kshL5qQ00?vH0@7:,0*44`
                                                                               
 The file named log_ais_1243_vernon.log.xz contains compressed version of all the data collected by the station since 2016-03-28 22:12:12.
@@ -62,6 +63,7 @@ The *-separated suffix (*5C) is the NMEA 0183 data-integrity checksum for the se
 For comparison, here is an example of a multifragment sentence with a nonempty message ID field:
 
 `!AIVDM,2,1,3,B,55P5TL01VIaAL@7WKO@mBplU@<PDhh000000001S;AJ::4A80?4i@E53,0*3E`
+
 `!AIVDM,2,2,3,B,1@0000000000000,2*55`
 
 Technically, NMEA0183 does not actually require that a !-led sentence be AIS. This format can be used for any encapsulated data. The syntax and semantics of fields 1-4 are fixed, and the fill-bit field and NEA checksum are required, but the payload fields may contain any encapsulated data.
@@ -76,11 +78,13 @@ https://pypi.python.org/pypi/libais
 Two examples in Python language
 
 One line message:
+
 `2016-04-01 00:09:59, !AIVDM,1,1,,A,240UuRhP1RP716JL4:sLlOwnb6hT,0*3C`
 
 Extract Only the data payload
 
 `import ais`
+
 `ais.decode('240UuRhP1RP716JL4:sLlOwnb6hT',0)`
 
 	{
@@ -108,13 +112,16 @@ Extract Only the data payload
 	}
 
 Two lines message:
-`016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61`
+
+`2016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61`
+
 `2016-04-01 10:46:06, !AIVDM,2,2,4,A,88888888880,2*20`
 
 
 TODO: Concatenate the two NMEA sentences below and don't forget to replace the 0 args at the end by 2
 
 `import ais`
+
 `ais.decode('540UuRl00000PF3OC7UHTdTpN18Tp@622222220t4iQ7651<04TSmAC``888888888888880',2)`
 
 	{
