@@ -22,7 +22,7 @@ You can look at the [station dashboard's](http://www.marinetraffic.com/en/ais/de
 
 This work is part of the [CaribeWaveFWI Project](https://github.com/caribewave "CaribeWaveFWI")
 
-Each file **ais_vernon_yyyymmdd.log** contains the raw AIS data of the day in local time of Paris
+Each file **ais_vernon_yyyymmdd.log** contains the raw AIS data of the day with a timestamp at local time of Paris
 
 `YYYY-MM-DD HH:MM:SS, o---------------AIS SENTENCE -----------------o`
 
