@@ -89,31 +89,31 @@ Extract Only the data payload
 `import ais`
 
 `ais.decode('240UuRhP1RP716JL4:sLlOwnb6hT',0)`
-
-	{
-	u'slot_timeout': 1L,
-	u'sync_state': 0L,
-	u'true_heading': 511L,
-	u'utc_spare': 0L,
-	u'sog': 9.800000190734863,
-	u'rot': -731.386474609375,
-	u'nav_status': 0L,
-	u'repeat_indicator': 0L,
-	u'raim': True,
-	u'id': 2L,
-	u'utc_min': 9L,
-	u'spare': 2L,
-	u'cog': 328.1000061035156,
-	u'timestamp': 59L,
-	u'y': 49.04743194580078,
-	u'x': 1.5329283475875854,
-	u'position_accuracy': 1L,
-	u'utc_hour': 22L,
-	u'rot_over_range': True,
-	u'mmsi': 269057419L,
-	u'special_manoeuvre': 1L
-	}
-
+```json
+{
+u'slot_timeout': 1L,
+u'sync_state': 0L,
+u'true_heading': 511L,
+u'utc_spare': 0L,
+u'sog': 9.800000190734863,
+u'rot': -731.386474609375,
+u'nav_status': 0L,
+u'repeat_indicator': 0L,
+u'raim': True,
+u'id': 2L,
+u'utc_min': 9L,
+u'spare': 2L,
+u'cog': 328.1000061035156,
+u'timestamp': 59L,
+u'y': 49.04743194580078,
+u'x': 1.5329283475875854,
+u'position_accuracy': 1L,
+u'utc_hour': 22L,
+u'rot_over_range': True,
+u'mmsi': 269057419L,
+u'special_manoeuvre': 1L
+}
+```
 **Two lines message:**
 
 `2016-04-01 10:46:06, !AIVDM,2,1,4,A,53GR=4400000Ho??C40@D9E==T0000000000001?90>27t@PJ08888888888,0*61`
